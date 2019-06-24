@@ -1,13 +1,26 @@
+import 'dart:math';
+import 'dart:ui';
+
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:geopattern/geopattern.dart';
+import 'package:geopattern/patterns/squares.dart';
 
 void main() {
-  test('adds one to input values', () {
-    final calculator = Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
-    expect(() => calculator.addOne(null), throwsNoSuchMethodError);
+  test('squares', () {
+    final gen = Random();
+    final pattern = Squares(
+        size: 30,
+        nx: 6,
+        ny: 6,
+        fillColors: List.generate(
+            36,
+            (int i) => Color.fromARGB(
+                10 + (gen.nextDouble() * 100).round(),
+                50 + gen.nextInt(1) * 150,
+                50 + gen.nextInt(1) * 150,
+                50 + gen.nextInt(1) * 150)),
+        strokeColor: Color.fromARGB(50, 50, 50, 50));
+    expect(pattern.width, 180);
+    expect(pattern.height, 180);
   });
 }
