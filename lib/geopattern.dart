@@ -8,7 +8,8 @@ class FullPainter extends CustomPainter {
   Color background;
   Pattern pattern;
 
-  FullPainter(this.pattern, this.background);
+  FullPainter({@required this.pattern, @required this.background})
+      : assert(pattern != null && background != null);
 
   @override
   void paint(Canvas canvas, Size size) {

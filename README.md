@@ -26,7 +26,8 @@ class MyApp extends StatelessWidget {
           strokeColor: Color.fromARGB(50, 50, 50, 50));
       return CustomPaint(
           size: Size(constraints.maxWidth, constraints.maxHeight),
-          painter: FullPainter(pattern, Colors.lightGreen));
+          painter:
+              FullPainter(pattern: pattern, background: Colors.lightGreen));
     });
   }
 }
@@ -34,4 +35,4 @@ class MyApp extends StatelessWidget {
 
 creates
 
-![](doc/squares.png)
+<img src="doc/squares.png" height="720">
