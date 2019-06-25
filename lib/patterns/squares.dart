@@ -28,12 +28,9 @@ class Squares extends Pattern {
         final fillPaint = Paint()
           ..style = PaintingStyle.fill
           ..color = this.fillColors[i];
-        canvas.drawRect(
-            Rect.fromLTWH(x * size + left, y * size + top, size, size),
-            strokePaint);
-        canvas.drawRect(
-            Rect.fromLTWH(x * size + left, y * size + top, size, size),
-            fillPaint);
+        final rect = Rect.fromLTWH(x * size + left, y * size + top, size, size);
+        canvas.drawRect(rect, strokePaint);
+        canvas.drawRect(rect, fillPaint);
       }
     }
   }
