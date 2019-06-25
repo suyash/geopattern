@@ -6,28 +6,28 @@ import 'pattern.dart';
 class Diamonds extends Pattern {
   final double w;
   final double h;
-  final int nw;
-  final int nh;
+  final int nx;
+  final int ny;
   final List<Color> fillColors;
   final Color strokeColor;
 
   Diamonds(
       {@required this.w,
       @required this.h,
-      @required this.nw,
-      @required this.nh,
+      @required this.nx,
+      @required this.ny,
       @required this.fillColors,
       @required this.strokeColor})
-      : assert(fillColors.length == nw * nh);
+      : assert(fillColors.length == nx * ny);
 
   void paint(Canvas canvas, double top, double left) {
     final strokePaint = Paint()
       ..style = PaintingStyle.stroke
       ..color = this.strokeColor;
 
-    for (var y = 0; y < nh; y++) {
-      for (var x = 0; x < nw; x++) {
-        final i = y * nw + x;
+    for (var y = 0; y < ny; y++) {
+      for (var x = 0; x < nx; x++) {
+        final i = y * nx + x;
 
         final fillPaint = Paint()
           ..style = PaintingStyle.fill
@@ -56,10 +56,10 @@ class Diamonds extends Pattern {
   }
 
   get width {
-    return w * nw;
+    return w * nx;
   }
 
   get height {
-    return (h * nh / 2).ceil() * 1.0;
+    return (h * ny / 2).ceil() * 1.0;
   }
 }

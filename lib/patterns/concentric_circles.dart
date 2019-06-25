@@ -6,25 +6,25 @@ import 'pattern.dart';
 class ConcentricCircles extends Pattern {
   final double radius;
   final double strokeWidth;
-  final int nw;
-  final int nh;
+  final int nx;
+  final int ny;
   final List<Color> strokeColors;
   final List<Color> fillColors;
 
   ConcentricCircles(
       {@required this.radius,
       @required this.strokeWidth,
-      @required this.nw,
-      @required this.nh,
+      @required this.nx,
+      @required this.ny,
       @required this.strokeColors,
       @required this.fillColors})
-      : assert(strokeColors.length == nw * nh),
-        assert(fillColors.length == nw * nh);
+      : assert(strokeColors.length == nx * ny),
+        assert(fillColors.length == nx * ny);
 
   void paint(Canvas canvas, double top, double left) {
-    for (var y = 0; y < nh; y++) {
-      for (var x = 0; x < nw; x++) {
-        final i = y * nw + x;
+    for (var y = 0; y < ny; y++) {
+      for (var x = 0; x < nx; x++) {
+        final i = y * nx + x;
 
         final cx = (radius + strokeWidth) * (x + 0.5);
         final cy = (radius + strokeWidth) * (y + 0.5);
@@ -44,10 +44,10 @@ class ConcentricCircles extends Pattern {
   }
 
   get width {
-    return (radius + strokeWidth) * nw;
+    return (radius + strokeWidth) * nx;
   }
 
   get height {
-    return (radius + strokeWidth) * nh;
+    return (radius + strokeWidth) * ny;
   }
 }

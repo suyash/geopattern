@@ -4,21 +4,21 @@ import 'pattern.dart';
 
 class OverlappingCircles extends Pattern {
   final double radius;
-  final int nw;
-  final int nh;
+  final int nx;
+  final int ny;
   final List<Color> fillColors;
 
   OverlappingCircles(
       {@required this.radius,
-      @required this.nw,
-      @required this.nh,
+      @required this.nx,
+      @required this.ny,
       @required this.fillColors})
-      : assert(fillColors.length == nw * nh);
+      : assert(fillColors.length == nx * ny);
 
   void paint(Canvas canvas, double top, double left) {
-    for (var y = 0; y < nh; y++) {
-      for (var x = 0; x < nw; x++) {
-        final i = y * nw + x;
+    for (var y = 0; y < ny; y++) {
+      for (var x = 0; x < nx; x++) {
+        final i = y * nx + x;
 
         final cx = radius * x;
         final cy = radius * y;
@@ -35,10 +35,10 @@ class OverlappingCircles extends Pattern {
   }
 
   get width {
-    return radius * nw;
+    return radius * nx;
   }
 
   get height {
-    return radius * nh;
+    return radius * ny;
   }
 }
