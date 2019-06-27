@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'dart:ui';
 
 abstract class Pattern {
   void paint(Canvas canvas, Offset offset);

@@ -1,6 +1,7 @@
 import 'dart:math';
+import 'dart:ui';
 
-import 'package:flutter/widgets.dart';
+import 'package:meta/meta.dart';
 
 import 'pattern.dart';
 
