@@ -24,7 +24,7 @@ class Squares extends Pattern {
       ..color = this.strokeColor;
     for (var y = 0; y < ny; y++) {
       for (var x = 0; x < nx; x++) {
-        final i = y * 6 + x;
+        final i = y * nx + x;
         final fillPaint = Paint()
           ..style = PaintingStyle.fill
           ..color = this.fillColors[i];
