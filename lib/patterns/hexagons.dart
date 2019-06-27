@@ -57,7 +57,7 @@ class Hexagons extends Pattern {
       ..lineTo(offset.dx + size * 2, offset.dy + _hexHeight / 2)
       ..lineTo(offset.dx + (3 * size) / 2, offset.dy + 2 * _hexHeight / 2)
       ..lineTo(offset.dx + size / 2, offset.dy + 2 * _hexHeight / 2)
-      ..moveTo(offset.dx + 0, offset.dy + _hexHeight / 2);
+      ..lineTo(offset.dx + 0, offset.dy + _hexHeight / 2);
   }
 
   get width {
