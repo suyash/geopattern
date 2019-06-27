@@ -19,7 +19,7 @@ class NestedSquares extends Pattern {
       : assert(strokeColors.length == nx * ny),
         assert(outersize > size);
 
-  void paint(Canvas canvas, double top, double left) {
+  void paint(Canvas canvas, Offset offset) {
     for (var y = 0; y < ny; y++) {
       for (var x = 0; x < nx; x++) {
         final i = y * nx + x;
@@ -29,8 +29,11 @@ class NestedSquares extends Pattern {
           ..color = this.strokeColors[i]
           ..strokeWidth = size;
 
-        final rect = Rect.fromLTWH(x * (2 * size + outersize) + size / 2 + left,
-            y * (2 * size + outersize) + size / 2 + top, outersize, outersize);
+        final rect = Rect.fromLTWH(
+            x * (2 * size + outersize) + size / 2 + offset.dx,
+            y * (2 * size + outersize) + size / 2 + offset.dy,
+            outersize,
+            outersize);
 
         canvas.drawRect(rect, strokePaint);
 
@@ -40,8 +43,8 @@ class NestedSquares extends Pattern {
           ..strokeWidth = size;
 
         final outerRect = Rect.fromLTWH(
-            x * (2 * size + outersize) + size * 2.5 + left,
-            y * (2 * size + outersize) + size * 2.5 + top,
+            x * (2 * size + outersize) + size * 2.5 + offset.dx,
+            y * (2 * size + outersize) + size * 2.5 + offset.dy,
             size * 3,
             size * 3);
 

@@ -21,7 +21,7 @@ class ConcentricCircles extends Pattern {
       : assert(strokeColors.length == nx * ny),
         assert(fillColors.length == nx * ny);
 
-  void paint(Canvas canvas, double top, double left) {
+  void paint(Canvas canvas, Offset offset) {
     for (var y = 0; y < ny; y++) {
       for (var x = 0; x < nx; x++) {
         final i = y * nx + x;
@@ -33,12 +33,14 @@ class ConcentricCircles extends Pattern {
           ..style = PaintingStyle.stroke
           ..color = this.strokeColors[i]
           ..strokeWidth = strokeWidth;
-        canvas.drawCircle(Offset(left + cx, top + cy), radius / 2, strokePaint);
+        canvas.drawCircle(
+            Offset(offset.dx + cx, offset.dy + cy), radius / 2, strokePaint);
 
         final fillPaint = Paint()
           ..style = PaintingStyle.fill
           ..color = this.fillColors[i];
-        canvas.drawCircle(Offset(left + cx, top + cy), radius / 4, fillPaint);
+        canvas.drawCircle(
+            Offset(offset.dx + cx, offset.dy + cy), radius / 4, fillPaint);
       }
     }
   }

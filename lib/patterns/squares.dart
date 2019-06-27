@@ -18,7 +18,7 @@ class Squares extends Pattern {
       @required this.strokeColor})
       : assert(fillColors.length == nx * ny);
 
-  void paint(Canvas canvas, double top, double left) {
+  void paint(Canvas canvas, Offset offset) {
     final strokePaint = Paint()
       ..style = PaintingStyle.stroke
       ..color = this.strokeColor;
@@ -28,7 +28,8 @@ class Squares extends Pattern {
         final fillPaint = Paint()
           ..style = PaintingStyle.fill
           ..color = this.fillColors[i];
-        final rect = Rect.fromLTWH(x * size + left, y * size + top, size, size);
+        final rect = Rect.fromLTWH(
+            x * size + offset.dx, y * size + offset.dy, size, size);
         canvas.drawRect(rect, strokePaint);
         canvas.drawRect(rect, fillPaint);
       }

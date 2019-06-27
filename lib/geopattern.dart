@@ -16,7 +16,7 @@ class FullPainter extends CustomPainter {
     canvas.drawColor(background, BlendMode.color);
     for (var i = 0.0; i < size.height; i += pattern.height) {
       for (var j = 0.0; j < size.width; j += pattern.width) {
-        pattern.paint(canvas, i, j);
+        pattern.paint(canvas, Offset(j, i));
       }
     }
   }

@@ -15,7 +15,7 @@ class OverlappingCircles extends Pattern {
       @required this.fillColors})
       : assert(fillColors.length == nx * ny);
 
-  void paint(Canvas canvas, double top, double left) {
+  void paint(Canvas canvas, Offset offset) {
     for (var y = 0; y < ny; y++) {
       for (var x = 0; x < nx; x++) {
         final i = y * nx + x;
@@ -27,7 +27,8 @@ class OverlappingCircles extends Pattern {
           ..style = PaintingStyle.fill
           ..color = this.fillColors[i];
 
-        canvas.drawCircle(Offset(left + cx, top + cy), radius, fillPaint);
+        canvas.drawCircle(
+            Offset(offset.dx + cx, offset.dy + cy), radius, fillPaint);
 
         // NOTE: not doing boundaries for now
       }

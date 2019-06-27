@@ -24,7 +24,7 @@ class Hexagons extends Pattern {
         _hexWidth = size * 2,
         _hexHeight = size * sqrt(3);
 
-  void paint(Canvas canvas, double top, double left) {
+  void paint(Canvas canvas, Offset offset) {
     final strokePaint = Paint()
       ..style = PaintingStyle.stroke
       ..color = this.strokeColor;
@@ -40,7 +40,8 @@ class Hexagons extends Pattern {
           ..color = this.fillColors[i];
 
         final hex = _createHexagon(Offset(
-            left + x * 1.5 * size - _hexWidth / 2, top + dy - _hexHeight / 2));
+            offset.dx + x * 1.5 * size - _hexWidth / 2,
+            offset.dy + dy - _hexHeight / 2));
         canvas.drawPath(hex, fillPaint);
         canvas.drawPath(hex, strokePaint);
 

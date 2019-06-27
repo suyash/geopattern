@@ -20,7 +20,7 @@ class Diamonds extends Pattern {
       @required this.strokeColor})
       : assert(fillColors.length == nx * ny);
 
-  void paint(Canvas canvas, double top, double left) {
+  void paint(Canvas canvas, Offset offset) {
     final strokePaint = Paint()
       ..style = PaintingStyle.stroke
       ..color = this.strokeColor;
@@ -34,10 +34,9 @@ class Diamonds extends Pattern {
           ..color = this.fillColors[i];
 
         final dx = y % 2 == 1 ? w / 2 : 0;
-        final offsetx = dx + x * w - w / 2;
-        final offsety = (y - 1) * h / 2;
 
-        final diamond = _createDiamond(left + offsetx, top + offsety);
+        final diamond = _createDiamond(Offset(
+            offset.dx + dx + x * w - w / 2, offset.dy + (y - 1) * h / 2));
         canvas.drawPath(diamond, strokePaint);
         canvas.drawPath(diamond, fillPaint);
 
@@ -46,13 +45,13 @@ class Diamonds extends Pattern {
     }
   }
 
-  Path _createDiamond(double offsetx, double offsety) {
+  Path _createDiamond(Offset offset) {
     return Path()
-      ..moveTo(offsetx + w / 2.0, offsety)
-      ..lineTo(offsetx + w, offsety + h / 2.0)
-      ..lineTo(offsetx + w / 2.0, offsety + h)
-      ..lineTo(offsetx, offsety + h / 2.0)
-      ..lineTo(offsetx + w / 2.0, offsety);
+      ..moveTo(offset.dx + w / 2.0, offset.dy)
+      ..lineTo(offset.dx + w, offset.dy + h / 2.0)
+      ..lineTo(offset.dx + w / 2.0, offset.dy + h)
+      ..lineTo(offset.dx, offset.dy + h / 2.0)
+      ..lineTo(offset.dx + w / 2.0, offset.dy);
   }
 
   get width {

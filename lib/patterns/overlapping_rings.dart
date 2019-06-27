@@ -17,7 +17,7 @@ class OverlappingRings extends Pattern {
       @required this.strokeColors})
       : assert(strokeColors.length == nx * ny);
 
-  void paint(Canvas canvas, double top, double left) {
+  void paint(Canvas canvas, Offset offset) {
     for (var y = 0; y < ny; y++) {
       for (var x = 0; x < nx; x++) {
         final i = y * nx + x;
@@ -30,8 +30,8 @@ class OverlappingRings extends Pattern {
           ..color = strokeColors[i]
           ..strokeWidth = strokeWidth;
 
-        canvas.drawCircle(
-            Offset(left + cx, top + cy), radius - strokeWidth / 2, fillPaint);
+        canvas.drawCircle(Offset(offset.dx + cx, offset.dy + cy),
+            radius - strokeWidth / 2, fillPaint);
 
         // NOTE: not doing boundaries for now
       }
