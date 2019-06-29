@@ -4,6 +4,7 @@
 
 Geometric Patterns for Flutter using `CustomPainter`s.
 
+<div>
 <img src="examples/images/squares.png" height="400" />
 <img src="examples/images/diamonds.png" height="400" />
 <img src="examples/images/hexagons.png" height="400" />
@@ -18,6 +19,7 @@ Geometric Patterns for Flutter using `CustomPainter`s.
 <img src="examples/images/plus_signs.png" height="400" />
 <img src="examples/images/triangles.png" height="400" />
 <img src="examples/images/sine_waves.png" height="400" />
+</div>
 
 ## Simple Example
 
