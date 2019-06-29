@@ -21,6 +21,18 @@ class NestedSquares extends Pattern {
       : assert(strokeColors.length == nx * ny),
         assert(outerside > side);
 
+  NestedSquares.fromHash(String hash)
+      : assert(hash.length == 40),
+        side = int.parse(hash[0], radix: 16) / 16.0 * 5 + 4,
+        outerside = (int.parse(hash[0], radix: 16) / 16.0 * 5 + 4) * 7,
+        nx = 6,
+        ny = 6,
+        strokeColors = hash.split("").map((String c) {
+          final v = int.parse(c, radix: 16);
+          final g = 50 + (v % 1) * 150;
+          return Color.fromARGB(((v / 16.0) * 100 + 50).round(), g, g, g);
+        }).toList();
+
   void paint(Canvas canvas, Offset offset) {
     for (var y = 0; y < ny; y++) {
       for (var x = 0; x < nx; x++) {

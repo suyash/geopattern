@@ -25,6 +25,20 @@ class Hexagons extends Pattern {
         _hexWidth = side * 2,
         _hexHeight = side * sqrt(3);
 
+  Hexagons.fromHash(String hash)
+      : assert(hash.length == 40),
+        side = int.parse(hash[0], radix: 16) / 16.0 * 30 + 8,
+        nx = 6,
+        ny = 6,
+        fillColors = hash.split("").map((String c) {
+          final v = int.parse(c, radix: 16);
+          final g = 50 + (v % 1) * 150;
+          return Color.fromARGB(((v / 16.0) * 100 + 50).round(), g, g, g);
+        }).toList(),
+        strokeColor = Color.fromARGB(50, 0, 0, 0),
+        _hexWidth = (int.parse(hash[0], radix: 16) / 16.0 * 30 + 8) * 2,
+        _hexHeight = (int.parse(hash[0], radix: 16) / 16.0 * 30 + 8) * sqrt(3);
+
   void paint(Canvas canvas, Offset offset) {
     final strokePaint = Paint()
       ..style = PaintingStyle.stroke

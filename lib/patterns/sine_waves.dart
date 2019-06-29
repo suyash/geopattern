@@ -24,6 +24,23 @@ class SineWaves extends Pattern {
       : _xoff = (period / 4) * .7,
         assert(strokeOffsets.length == strokeColors.length);
 
+  SineWaves.fromHash(String hash)
+      : assert(hash.length == 40),
+        amplitude = int.parse(hash[0], radix: 16) / 16.0 * 50 + 20,
+        period = int.parse(hash[1], radix: 16) / 16.0 * 50 + 100,
+        strokeOffsets = hash.split("").map((String c) {
+          final v = int.parse(c, radix: 16);
+          final amplitude = int.parse(hash[0], radix: 16) / 16.0 * 300 + 100;
+          return v / 16 * amplitude - amplitude / 2;
+        }).toList(),
+        strokeWidth = int.parse(hash[2], radix: 16) * 1.0,
+        strokeColors = hash.split("").map((String c) {
+          final v = int.parse(c, radix: 16);
+          final g = 50 + (v % 1) * 150;
+          return Color.fromARGB(((v / 16.0) * 100 + 50).round(), g, g, g);
+        }).toList(),
+        _xoff = ((int.parse(hash[1], radix: 16) / 16.0 * 70 + 30) / 4) * .7;
+
   void paint(Canvas canvas, Offset offset) {
     for (var i = 0; i < strokeOffsets.length; i++) {
       final strokePaint = Paint()

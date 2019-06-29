@@ -23,6 +23,20 @@ class PlusSigns extends Pattern {
         _midl = side / 3,
         _midh = 2 * side / 3;
 
+  PlusSigns.fromHash(String hash)
+      : assert(hash.length == 40),
+        side = int.parse(hash[0], radix: 16) / 16.0 * 50 + 30,
+        nx = 6,
+        ny = 6,
+        fillColors = hash.split("").map((String c) {
+          final v = int.parse(c, radix: 16);
+          final g = 50 + (v % 1) * 150;
+          return Color.fromARGB(((v / 16.0) * 100 + 50).round(), g, g, g);
+        }).toList(),
+        strokeColor = Color.fromARGB(50, 0, 0, 0),
+        _midl = (int.parse(hash[0], radix: 16) / 16.0 * 50 + 30) / 3,
+        _midh = 2 * (int.parse(hash[0], radix: 16) / 16.0 * 50 + 30) / 3;
+
   void paint(Canvas canvas, Offset offset) {
     final strokePaint = Paint()
       ..style = PaintingStyle.stroke

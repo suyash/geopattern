@@ -28,6 +28,49 @@ class Plaid extends Pattern {
         assert(horizontalOffsets.length == horizontalSizes.length),
         assert(verticalOffsets.length == verticalSizes.length);
 
+  Plaid.fromHash(String hash)
+      : assert(hash.length == 40),
+        horizontalOffsets = hash
+            .substring(0, 20)
+            .split("")
+            .map((String a) => int.parse(a, radix: 16) + 5.0)
+            .toList(),
+        verticalOffsets = hash
+            .substring(0, 20)
+            .split("")
+            .map((String a) => int.parse(a, radix: 16) + 5.0)
+            .toList(),
+        horizontalSizes = hash
+            .substring(20)
+            .split("")
+            .map((String a) => int.parse(a, radix: 16) + 5.0)
+            .toList(),
+        verticalSizes = hash
+            .substring(20)
+            .split("")
+            .map((String a) => int.parse(a, radix: 16) + 5.0)
+            .toList(),
+        horizontalFillColors = hash
+            .substring(0, 20)
+            .split("")
+            .map((String a) => Color.fromARGB(
+                (50 + (int.parse(a, radix: 16) / 16) * 150).round(),
+                50 + (int.parse(a, radix: 16) % 2) * 150,
+                50 + (int.parse(a, radix: 16) % 2) * 150,
+                50 + (int.parse(a, radix: 16) % 2) * 150))
+            .toList(),
+        verticalFillColors = hash
+            .substring(20)
+            .split("")
+            .map((String a) => Color.fromARGB(
+                (50 + (int.parse(a, radix: 16) / 16) * 150).round(),
+                50 + (int.parse(a, radix: 16) % 2) * 150,
+                50 + (int.parse(a, radix: 16) % 2) * 150,
+                50 + (int.parse(a, radix: 16) % 2) * 150))
+            .toList(),
+        _nx = 20,
+        _ny = 20;
+
   void paint(Canvas canvas, Offset offset) {
     double left = 0;
     for (var i = 0; i < _nx; i++) {

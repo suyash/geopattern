@@ -19,6 +19,18 @@ class MosaicSquares extends Pattern {
       @required this.strokeColor})
       : assert(fillColors.length == 2 * nx * ny);
 
+  MosaicSquares.fromHash(String hash)
+      : assert(hash.length == 40),
+        side = int.parse(hash[0], radix: 16) / 16.0 * 10 + 15,
+        nx = 4,
+        ny = 4,
+        fillColors = hash.substring(0, 32).split("").map((String c) {
+          final v = int.parse(c, radix: 16);
+          final g = 50 + (v % 1) * 150;
+          return Color.fromARGB(((v / 16.0) * 100 + 50).round(), g, g, g);
+        }).toList(),
+        strokeColor = Color.fromARGB(50, 0, 0, 0);
+
   void paint(Canvas canvas, Offset offset) {
     final strokePaint = Paint()
       ..style = PaintingStyle.fill
