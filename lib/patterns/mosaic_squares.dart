@@ -5,14 +5,14 @@ import 'package:meta/meta.dart';
 import 'pattern.dart';
 
 class MosaicSquares extends Pattern {
-  final double size;
+  final double side;
   final int nx;
   final int ny;
   final List<Color> fillColors;
   final Color strokeColor;
 
   MosaicSquares(
-      {@required this.size,
+      {@required this.side,
       @required this.nx,
       @required this.ny,
       @required this.fillColors,
@@ -35,7 +35,7 @@ class MosaicSquares extends Pattern {
               ..color = this.fillColors[i];
             _drawOuter(
                 canvas,
-                Offset(2 * size * x + offset.dx, 2 * size * y + offset.dy),
+                Offset(2 * side * x + offset.dx, 2 * side * y + offset.dy),
                 strokePaint,
                 fillPaint);
           } else {
@@ -47,7 +47,7 @@ class MosaicSquares extends Pattern {
               ..color = this.fillColors[i + nx * ny];
             _drawInner(
                 canvas,
-                Offset(2 * size * x + offset.dx, 2 * size * y + offset.dy),
+                Offset(2 * side * x + offset.dx, 2 * side * y + offset.dy),
                 strokePaint,
                 fillPaint1,
                 fillPaint2);
@@ -62,7 +62,7 @@ class MosaicSquares extends Pattern {
               ..color = this.fillColors[i + nx * ny];
             _drawInner(
                 canvas,
-                Offset(2 * size * x + offset.dx, 2 * size * y + offset.dy),
+                Offset(2 * side * x + offset.dx, 2 * side * y + offset.dy),
                 strokePaint,
                 fillPaint1,
                 fillPaint2);
@@ -72,7 +72,7 @@ class MosaicSquares extends Pattern {
               ..color = this.fillColors[i];
             _drawOuter(
                 canvas,
-                Offset(2 * size * x + offset.dx, 2 * size * y + offset.dy),
+                Offset(2 * side * x + offset.dx, 2 * side * y + offset.dy),
                 strokePaint,
                 fillPaint);
           }
@@ -84,37 +84,37 @@ class MosaicSquares extends Pattern {
   void _drawOuter(
       Canvas canvas, Offset offset, Paint strokePaint, Paint fillPaint) {
     final bottomright = Path()
-      ..moveTo(offset.dx, offset.dy + size)
-      ..lineTo(offset.dx + size, offset.dy + 2 * size)
-      ..lineTo(offset.dx, offset.dy + 2 * size)
-      ..lineTo(offset.dx, offset.dy + size);
+      ..moveTo(offset.dx, offset.dy + side)
+      ..lineTo(offset.dx + side, offset.dy + 2 * side)
+      ..lineTo(offset.dx, offset.dy + 2 * side)
+      ..lineTo(offset.dx, offset.dy + side);
 
     canvas.drawPath(bottomright, strokePaint);
     canvas.drawPath(bottomright, fillPaint);
 
     final bottomleft = Path()
-      ..moveTo(offset.dx + 2 * size, offset.dy + size)
-      ..lineTo(offset.dx + 2 * size - size, offset.dy + 2 * size)
-      ..lineTo(offset.dx + 2 * size, offset.dy + 2 * size)
-      ..lineTo(offset.dx + 2 * size, offset.dy + size);
+      ..moveTo(offset.dx + 2 * side, offset.dy + side)
+      ..lineTo(offset.dx + 2 * side - side, offset.dy + 2 * side)
+      ..lineTo(offset.dx + 2 * side, offset.dy + 2 * side)
+      ..lineTo(offset.dx + 2 * side, offset.dy + side);
 
     canvas.drawPath(bottomleft, strokePaint);
     canvas.drawPath(bottomleft, fillPaint);
 
     final topleft = Path()
-      ..moveTo(offset.dx, offset.dy + size)
-      ..lineTo(offset.dx + size, offset.dy + size - size)
-      ..lineTo(offset.dx, offset.dy + size - size)
-      ..lineTo(offset.dx, offset.dy + size);
+      ..moveTo(offset.dx, offset.dy + side)
+      ..lineTo(offset.dx + side, offset.dy + side - side)
+      ..lineTo(offset.dx, offset.dy + side - side)
+      ..lineTo(offset.dx, offset.dy + side);
 
     canvas.drawPath(topleft, strokePaint);
     canvas.drawPath(topleft, fillPaint);
 
     final topright = Path()
-      ..moveTo(offset.dx + 2 * size, offset.dy + size)
-      ..lineTo(offset.dx + 2 * size - size, offset.dy + size - size)
-      ..lineTo(offset.dx + 2 * size, offset.dy + size - size)
-      ..lineTo(offset.dx + 2 * size, offset.dy + size);
+      ..moveTo(offset.dx + 2 * side, offset.dy + side)
+      ..lineTo(offset.dx + 2 * side - side, offset.dy + side - side)
+      ..lineTo(offset.dx + 2 * side, offset.dy + side - side)
+      ..lineTo(offset.dx + 2 * side, offset.dy + side);
 
     canvas.drawPath(topright, strokePaint);
     canvas.drawPath(topright, fillPaint);
@@ -123,47 +123,41 @@ class MosaicSquares extends Pattern {
   void _drawInner(Canvas canvas, Offset offset, Paint strokePaint,
       Paint fillPaint1, Paint fillPaint2) {
     final topleft = Path()
-      ..moveTo(offset.dx + size, offset.dy)
-      ..lineTo(offset.dx + size - size, offset.dy + size)
-      ..lineTo(offset.dx + size, offset.dy + size)
-      ..lineTo(offset.dx + size, offset.dy);
+      ..moveTo(offset.dx + side, offset.dy)
+      ..lineTo(offset.dx + side - side, offset.dy + side)
+      ..lineTo(offset.dx + side, offset.dy + side)
+      ..lineTo(offset.dx + side, offset.dy);
 
     canvas.drawPath(topleft, strokePaint);
     canvas.drawPath(topleft, fillPaint1);
 
     final bottomright = Path()
-      ..moveTo(offset.dx + size, offset.dy + 2 * size)
-      ..lineTo(offset.dx + size + size, offset.dy + 2 * size - size)
-      ..lineTo(offset.dx + size, offset.dy + 2 * size - size)
-      ..lineTo(offset.dx + size, offset.dy + 2 * size);
+      ..moveTo(offset.dx + side, offset.dy + 2 * side)
+      ..lineTo(offset.dx + side + side, offset.dy + 2 * side - side)
+      ..lineTo(offset.dx + side, offset.dy + 2 * side - side)
+      ..lineTo(offset.dx + side, offset.dy + 2 * side);
 
     canvas.drawPath(bottomright, strokePaint);
     canvas.drawPath(bottomright, fillPaint1);
 
     final topright = Path()
-      ..moveTo(offset.dx + size, offset.dy)
-      ..lineTo(offset.dx + size + size, offset.dy + size)
-      ..lineTo(offset.dx + size, offset.dy + size)
-      ..lineTo(offset.dx + size, offset.dy);
+      ..moveTo(offset.dx + side, offset.dy)
+      ..lineTo(offset.dx + side + side, offset.dy + side)
+      ..lineTo(offset.dx + side, offset.dy + side)
+      ..lineTo(offset.dx + side, offset.dy);
 
     canvas.drawPath(topright, strokePaint);
     canvas.drawPath(topright, fillPaint2);
 
     final bottomleft = Path()
-      ..moveTo(offset.dx + size, offset.dy + 2 * size)
-      ..lineTo(offset.dx + size - size, offset.dy + 2 * size - size)
-      ..lineTo(offset.dx + size, offset.dy + 2 * size - size)
-      ..lineTo(offset.dx + size, offset.dy + 2 * size);
+      ..moveTo(offset.dx + side, offset.dy + 2 * side)
+      ..lineTo(offset.dx + side - side, offset.dy + 2 * side - side)
+      ..lineTo(offset.dx + side, offset.dy + 2 * side - side)
+      ..lineTo(offset.dx + side, offset.dy + 2 * side);
 
     canvas.drawPath(bottomleft, strokePaint);
     canvas.drawPath(bottomleft, fillPaint2);
   }
 
-  get width {
-    return size * nx * 2;
-  }
-
-  get height {
-    return size * ny * 2;
-  }
+  get size => Size(side * nx * 2, side * ny * 2);
 }

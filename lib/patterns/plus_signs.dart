@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 import 'pattern.dart';
 
 class PlusSigns extends Pattern {
-  final double size;
+  final double side;
   final int nx;
   final int ny;
   final List<Color> fillColors;
@@ -14,14 +14,14 @@ class PlusSigns extends Pattern {
   final double _midh;
 
   PlusSigns(
-      {@required this.size,
+      {@required this.side,
       @required this.nx,
       @required this.ny,
       @required this.fillColors,
       @required this.strokeColor})
       : assert(fillColors.length == nx * ny),
-        _midl = size / 3,
-        _midh = 2 * size / 3;
+        _midl = side / 3,
+        _midh = 2 * side / 3;
 
   void paint(Canvas canvas, Offset offset) {
     final strokePaint = Paint()
@@ -34,7 +34,7 @@ class PlusSigns extends Pattern {
           ..color = this.fillColors[y * nx + x];
         final dx = y % 2;
         final plus = _createPlus(offset +
-            Offset(x * _midh + _midl * (dx - 1), y * _midh - size / 2));
+            Offset(x * _midh + _midl * (dx - 1), y * _midh - side / 2));
         canvas.drawPath(plus, fillPaint);
         canvas.drawPath(plus, strokePaint);
       }
@@ -46,11 +46,11 @@ class PlusSigns extends Pattern {
       ..moveTo(offset.dx + _midl, offset.dy + 0)
       ..lineTo(offset.dx + _midh, offset.dy + 0)
       ..lineTo(offset.dx + _midh, offset.dy + _midl)
-      ..lineTo(offset.dx + size, offset.dy + _midl)
-      ..lineTo(offset.dx + size, offset.dy + _midh)
+      ..lineTo(offset.dx + side, offset.dy + _midl)
+      ..lineTo(offset.dx + side, offset.dy + _midh)
       ..lineTo(offset.dx + _midh, offset.dy + _midh)
-      ..lineTo(offset.dx + _midh, offset.dy + size)
-      ..lineTo(offset.dx + _midl, offset.dy + size)
+      ..lineTo(offset.dx + _midh, offset.dy + side)
+      ..lineTo(offset.dx + _midl, offset.dy + side)
       ..lineTo(offset.dx + _midl, offset.dy + _midh)
       ..lineTo(offset.dx + 0, offset.dy + _midh)
       ..lineTo(offset.dx + 0, offset.dy + _midl)
@@ -58,7 +58,5 @@ class PlusSigns extends Pattern {
       ..lineTo(offset.dx + _midl, offset.dy + 0);
   }
 
-  get width => size * nx / 3;
-
-  get height => size * ny / 3;
+  get size => Size(side * nx / 3, side * ny / 3);
 }

@@ -9,7 +9,7 @@ void main() {
   test('squares', () {
     final gen = Random();
     final pattern = Squares(
-        size: 30,
+        side: 30,
         nx: 6,
         ny: 6,
         fillColors: List.generate(
@@ -20,7 +20,7 @@ void main() {
                 50 + gen.nextInt(1) * 150,
                 50 + gen.nextInt(1) * 150)),
         strokeColor: Color.fromARGB(50, 50, 50, 50));
-    expect(pattern.width, 180);
-    expect(pattern.height, 180);
+    expect(pattern.size.width, 180);
+    expect(pattern.size.height, 180);
   });
 }

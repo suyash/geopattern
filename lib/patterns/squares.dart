@@ -6,14 +6,14 @@ import 'pattern.dart';
 
 /// A nx x ny repeating grid of squares
 class Squares extends Pattern {
-  final double size;
+  final double side;
   final int nx;
   final int ny;
   final List<Color> fillColors;
   final Color strokeColor;
 
   Squares(
-      {@required this.size,
+      {@required this.side,
       @required this.nx,
       @required this.ny,
       @required this.fillColors,
@@ -31,18 +31,12 @@ class Squares extends Pattern {
           ..style = PaintingStyle.fill
           ..color = this.fillColors[i];
         final rect = Rect.fromLTWH(
-            x * size + offset.dx, y * size + offset.dy, size, size);
+            x * side + offset.dx, y * side + offset.dy, side, side);
         canvas.drawRect(rect, strokePaint);
         canvas.drawRect(rect, fillPaint);
       }
     }
   }
 
-  get width {
-    return nx * size;
-  }
-
-  get height {
-    return ny * size;
-  }
+  get size => Size(nx * side, ny * side);
 }

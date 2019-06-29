@@ -5,14 +5,14 @@ import 'package:meta/meta.dart';
 import 'pattern.dart';
 
 class Chevrons extends Pattern {
-  final double size;
+  final double side;
   final int nx;
   final int ny;
   final List<Color> fillColors;
   final Color strokeColor;
 
   Chevrons(
-      {@required this.size,
+      {@required this.side,
       @required this.nx,
       @required this.ny,
       @required this.fillColors,
@@ -34,9 +34,9 @@ class Chevrons extends Pattern {
           ..color = this.fillColors[i];
 
         final leftChevron = _createChevronLeft(Offset(
-            offset.dx + x * size, offset.dy + (2 * size * y) / 3 - size / 2));
+            offset.dx + x * side, offset.dy + (2 * side * y) / 3 - side / 2));
         final rightChevron = _createChevronRight(Offset(
-            offset.dx + x * size, offset.dy + (2 * size * y) / 3 - size / 2));
+            offset.dx + x * side, offset.dy + (2 * side * y) / 3 - side / 2));
 
         canvas.drawPath(leftChevron, strokePaint);
         canvas.drawPath(leftChevron, fillPaint);
@@ -49,30 +49,24 @@ class Chevrons extends Pattern {
   }
 
   Path _createChevronLeft(Offset offset) {
-    final e = (size * 2) / 3;
+    final e = (side * 2) / 3;
     return Path()
       ..moveTo(offset.dx, offset.dy)
-      ..lineTo(offset.dx + size / 2, offset.dy + size - e)
-      ..lineTo(offset.dx + size / 2, offset.dy + size)
+      ..lineTo(offset.dx + side / 2, offset.dy + side - e)
+      ..lineTo(offset.dx + side / 2, offset.dy + side)
       ..lineTo(offset.dx, offset.dy + e)
       ..lineTo(offset.dx, offset.dy);
   }
 
   Path _createChevronRight(Offset offset) {
-    final e = (size * 2) / 3;
+    final e = (side * 2) / 3;
     return Path()
-      ..moveTo(offset.dx + size / 2, offset.dy + size - e)
-      ..lineTo(offset.dx + size, offset.dy)
-      ..lineTo(offset.dx + size, offset.dy + e)
-      ..lineTo(offset.dx + size / 2, offset.dy + size)
-      ..lineTo(offset.dx + size / 2, offset.dy + size - e);
+      ..moveTo(offset.dx + side / 2, offset.dy + side - e)
+      ..lineTo(offset.dx + side, offset.dy)
+      ..lineTo(offset.dx + side, offset.dy + e)
+      ..lineTo(offset.dx + side / 2, offset.dy + side)
+      ..lineTo(offset.dx + side / 2, offset.dy + side - e);
   }
 
-  get width {
-    return size * nx;
-  }
-
-  get height {
-    return ((size * ny * 2) / 3).ceil() * 1.0;
-  }
+  get size => Size(side * nx, ((side * ny * 2) / 3).ceil() * 1.0);
 }

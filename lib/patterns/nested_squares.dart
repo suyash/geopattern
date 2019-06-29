@@ -6,20 +6,20 @@ import 'pattern.dart';
 
 /// A nx x ny grid of a smaller square inside a larger square
 class NestedSquares extends Pattern {
-  final double size;
-  final double outersize;
+  final double side;
+  final double outerside;
   final int nx;
   final int ny;
   final List<Color> strokeColors;
 
   NestedSquares(
-      {@required this.size,
-      @required this.outersize,
+      {@required this.side,
+      @required this.outerside,
       @required this.nx,
       @required this.ny,
       @required this.strokeColors})
       : assert(strokeColors.length == nx * ny),
-        assert(outersize > size);
+        assert(outerside > side);
 
   void paint(Canvas canvas, Offset offset) {
     for (var y = 0; y < ny; y++) {
@@ -29,37 +29,31 @@ class NestedSquares extends Pattern {
         final strokePaint = Paint()
           ..style = PaintingStyle.stroke
           ..color = this.strokeColors[i]
-          ..strokeWidth = size;
+          ..strokeWidth = side;
 
         final rect = Rect.fromLTWH(
-            x * (2 * size + outersize) + size / 2 + offset.dx,
-            y * (2 * size + outersize) + size / 2 + offset.dy,
-            outersize,
-            outersize);
+            x * (2 * side + outerside) + side / 2 + offset.dx,
+            y * (2 * side + outerside) + side / 2 + offset.dy,
+            outerside,
+            outerside);
 
         canvas.drawRect(rect, strokePaint);
 
         final outerStrokePaint = Paint()
           ..style = PaintingStyle.stroke
           ..color = this.strokeColors[i]
-          ..strokeWidth = size;
+          ..strokeWidth = side;
 
         final outerRect = Rect.fromLTWH(
-            x * (2 * size + outersize) + size * 2.5 + offset.dx,
-            y * (2 * size + outersize) + size * 2.5 + offset.dy,
-            size * 3,
-            size * 3);
+            x * (2 * side + outerside) + side * 2.5 + offset.dx,
+            y * (2 * side + outerside) + side * 2.5 + offset.dy,
+            side * 3,
+            side * 3);
 
         canvas.drawRect(outerRect, outerStrokePaint);
       }
     }
   }
 
-  get width {
-    return nx * (2 * size + outersize);
-  }
-
-  get height {
-    return ny * (2 * size + outersize);
-  }
+  get size => Size(nx * (2 * side + outerside), ny * (2 * side + outerside));
 }

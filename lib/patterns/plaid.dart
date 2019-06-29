@@ -33,7 +33,7 @@ class Plaid extends Pattern {
     for (var i = 0; i < _nx; i++) {
       left += horizontalOffsets[i];
       final rect = Rect.fromLTWH(
-          offset.dx + left, offset.dy, horizontalSizes[i], height);
+          offset.dx + left, offset.dy, horizontalSizes[i], size.height);
       final fillPaint = Paint()
         ..style = PaintingStyle.fill
         ..color = this.horizontalFillColors[i];
@@ -45,7 +45,7 @@ class Plaid extends Pattern {
     for (var i = 0; i < _ny; i++) {
       top += verticalOffsets[i];
       final rect = Rect.fromLTWH(
-          offset.dx, offset.dy + top, width, verticalSizes[i]);
+          offset.dx, offset.dy + top, size.width, verticalSizes[i]);
       final fillPaint = Paint()
         ..style = PaintingStyle.fill
         ..color = this.verticalFillColors[i];
@@ -54,11 +54,9 @@ class Plaid extends Pattern {
     }
   }
 
-  get width =>
+  get size => Size(
       horizontalSizes.reduce((a, b) => a + b) +
-      horizontalOffsets.reduce((a, b) => a + b);
-
-  get height =>
+          horizontalOffsets.reduce((a, b) => a + b),
       verticalSizes.reduce((a, b) => a + b) +
-      verticalOffsets.reduce((a, b) => a + b);
+          verticalOffsets.reduce((a, b) => a + b));
 }

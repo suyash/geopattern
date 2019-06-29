@@ -6,14 +6,14 @@ import 'pattern.dart';
 
 /// https://github.com/jasonlong/geo_pattern/blob/master/lib/geo_pattern/structure_generators/octagons_generator.rb
 class Octagons extends Pattern {
-  final double size;
+  final double side;
   final int nx;
   final int ny;
   final List<Color> fillColors;
   final Color strokeColor;
 
   Octagons(
-      {@required this.size,
+      {@required this.side,
       @required this.nx,
       @required this.ny,
       @required this.fillColors,
@@ -34,7 +34,7 @@ class Octagons extends Pattern {
           ..color = this.fillColors[i];
 
         final oct =
-            _createOctagon(Offset(offset.dx + x * size, offset.dy + y * size));
+            _createOctagon(Offset(offset.dx + x * side, offset.dy + y * side));
         canvas.drawPath(oct, fillPaint);
         canvas.drawPath(oct, strokePaint);
       }
@@ -43,22 +43,16 @@ class Octagons extends Pattern {
 
   Path _createOctagon(Offset offset) {
     return Path()
-      ..moveTo(offset.dx + size / 3, offset.dy + 0)
-      ..lineTo(offset.dx + 2 * size / 3, offset.dy + 0)
-      ..lineTo(offset.dx + size, offset.dy + size / 3)
-      ..lineTo(offset.dx + size, offset.dy + 2 * size / 3)
-      ..lineTo(offset.dx + 2 * size / 3, offset.dy + size)
-      ..lineTo(offset.dx + size / 3, offset.dy + size)
-      ..lineTo(offset.dx + 0, offset.dy + 2 * size / 3)
-      ..lineTo(offset.dx + 0, offset.dy + size / 3)
-      ..lineTo(offset.dx + size / 3, offset.dy + 0);
+      ..moveTo(offset.dx + side / 3, offset.dy + 0)
+      ..lineTo(offset.dx + 2 * side / 3, offset.dy + 0)
+      ..lineTo(offset.dx + side, offset.dy + side / 3)
+      ..lineTo(offset.dx + side, offset.dy + 2 * side / 3)
+      ..lineTo(offset.dx + 2 * side / 3, offset.dy + side)
+      ..lineTo(offset.dx + side / 3, offset.dy + side)
+      ..lineTo(offset.dx + 0, offset.dy + 2 * side / 3)
+      ..lineTo(offset.dx + 0, offset.dy + side / 3)
+      ..lineTo(offset.dx + side / 3, offset.dy + 0);
   }
 
-  get width {
-    return size * nx;
-  }
-
-  get height {
-    return size * ny;
-  }
+  get size => Size(side * nx, side * ny);
 }

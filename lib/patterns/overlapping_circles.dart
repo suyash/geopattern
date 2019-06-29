@@ -37,11 +37,5 @@ class OverlappingCircles extends Pattern {
     }
   }
 
-  get width {
-    return radius * nx;
-  }
-
-  get height {
-    return radius * ny;
-  }
+  get size => Size(radius * nx, radius * ny);
 }
