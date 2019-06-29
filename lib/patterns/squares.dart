@@ -5,6 +5,8 @@ import 'package:meta/meta.dart';
 import 'pattern.dart';
 
 /// A nx x ny repeating grid of squares
+///
+/// https://github.com/suyash/geopattern/blob/master/examples/images/squares.png
 class Squares extends Pattern {
   final double side;
   final int nx;

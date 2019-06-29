@@ -4,6 +4,7 @@ import 'package:meta/meta.dart';
 
 import 'pattern.dart';
 
+/// https://github.com/suyash/geopattern/blob/master/examples/images/mosaic_squares.png
 class MosaicSquares extends Pattern {
   final double side;
   final int nx;

@@ -6,6 +6,8 @@ import 'package:meta/meta.dart';
 import 'pattern.dart';
 
 /// https://github.com/jasonlong/geo_pattern/blob/master/lib/geo_pattern/structure_generators/hexagons_generator.rb
+///
+/// https://github.com/suyash/geopattern/blob/master/examples/images/hexagons.png
 class Hexagons extends Pattern {
   final double side;
   final int nx;

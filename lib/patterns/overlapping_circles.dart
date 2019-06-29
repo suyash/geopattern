@@ -4,6 +4,7 @@ import 'package:meta/meta.dart';
 
 import 'pattern.dart';
 
+/// https://github.com/suyash/geopattern/blob/master/examples/images/overlapping_circles.png
 class OverlappingCircles extends Pattern {
   final double radius;
   final int nx;

@@ -5,6 +5,8 @@ import 'package:meta/meta.dart';
 import 'pattern.dart';
 
 /// https://github.com/jasonlong/geo_pattern/blob/master/lib/geo_pattern/structure_generators/octagons_generator.rb
+///
+/// https://github.com/suyash/geopattern/blob/master/examples/images/octagons.png
 class Octagons extends Pattern {
   final double side;
   final int nx;

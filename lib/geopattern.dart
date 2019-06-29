@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 
 import 'patterns/pattern.dart';
 
+/// A CustomPainter that takes a single pattern and draws it across the entire canvas.
 class FullPainter extends CustomPainter {
   Color background;
   Pattern pattern;

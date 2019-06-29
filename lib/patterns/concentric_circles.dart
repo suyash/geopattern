@@ -5,6 +5,8 @@ import 'package:meta/meta.dart';
 import 'pattern.dart';
 
 /// A nw x nh repeating grid of circles
+///
+/// https://github.com/suyash/geopattern/blob/master/examples/images/concentric_circles.png
 class ConcentricCircles extends Pattern {
   final double radius;
   final double strokeWidth;

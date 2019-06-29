@@ -5,6 +5,8 @@ import 'package:meta/meta.dart';
 import 'pattern.dart';
 
 /// A nx x ny grid of a smaller square inside a larger square
+///
+/// https://github.com/suyash/geopattern/blob/master/examples/images/nested_squares.png
 class NestedSquares extends Pattern {
   final double side;
   final double outerside;

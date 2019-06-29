@@ -4,9 +4,11 @@ import 'package:meta/meta.dart';
 
 import 'pattern.dart';
 
-// Draws Sine waves using a cubic bezier curve approximation
-// The approximation is different from the original library, this
-// draws only a single period using 2 cubic paths.
+/// Draws Sine waves using a cubic bezier curve approximation
+/// The approximation is different from the original library, this
+/// draws only a single period using 2 cubic paths.
+///
+/// https://github.com/suyash/geopattern/blob/master/examples/images/sine_waves.png
 class SineWaves extends Pattern {
   final double amplitude;
   final double period;
