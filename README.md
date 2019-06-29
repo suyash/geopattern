@@ -5,20 +5,20 @@
 Geometric Patterns for Flutter using `CustomPainter`s.
 
 <div>
-<img src="examples/images/squares.png" height="400" />
-<img src="examples/images/diamonds.png" height="400" />
-<img src="examples/images/hexagons.png" height="400" />
-<img src="examples/images/concentric_circles.png" height="400" />
-<img src="examples/images/overlapping_circles.png" height="400" />
-<img src="examples/images/overlapping_rings.png" height="400" />
-<img src="examples/images/nested_squares.png" height="400" />
-<img src="examples/images/mosaic_squares.png" height="400" />
-<img src="examples/images/chevrons.png" height="400" />
-<img src="examples/images/octagons.png" height="400" />
-<img src="examples/images/plaid.png" height="400" />
-<img src="examples/images/plus_signs.png" height="400" />
-<img src="examples/images/triangles.png" height="400" />
-<img src="examples/images/sine_waves.png" height="400" />
+<img src="examples/images/squares.png" height="450" />
+<img src="examples/images/diamonds.png" height="450" />
+<img src="examples/images/hexagons.png" height="450" />
+<img src="examples/images/concentric_circles.png" height="450" />
+<img src="examples/images/overlapping_circles.png" height="450" />
+<img src="examples/images/overlapping_rings.png" height="450" />
+<img src="examples/images/nested_squares.png" height="450" />
+<img src="examples/images/mosaic_squares.png" height="450" />
+<img src="examples/images/chevrons.png" height="450" />
+<img src="examples/images/octagons.png" height="450" />
+<img src="examples/images/plaid.png" height="450" />
+<img src="examples/images/plus_signs.png" height="450" />
+<img src="examples/images/triangles.png" height="450" />
+<img src="examples/images/sine_waves.png" height="450" />
 </div>
 
 ## Simple Example
