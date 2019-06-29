@@ -69,5 +69,5 @@ class Diamonds extends Pattern {
       ..lineTo(offset.dx + w / 2.0, offset.dy);
   }
 
-  get size => Size(w * nx, (h * ny / 2).ceil() * 1.0);
+  Size get size => Size(w * nx, (h * ny / 2).ceil() * 1.0);
 }

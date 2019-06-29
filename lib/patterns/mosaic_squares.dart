@@ -171,5 +171,5 @@ class MosaicSquares extends Pattern {
     canvas.drawPath(bottomleft, fillPaint2);
   }
 
-  get size => Size(side * nx * 2, side * ny * 2);
+  Size get size => Size(side * nx * 2, side * ny * 2);
 }

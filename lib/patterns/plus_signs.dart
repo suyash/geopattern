@@ -72,5 +72,5 @@ class PlusSigns extends Pattern {
       ..lineTo(offset.dx + _midl, offset.dy + 0);
   }
 
-  get size => Size(side * nx / 3, side * ny / 3);
+  Size get size => Size(side * nx / 3, side * ny / 3);
 }

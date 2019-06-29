@@ -52,5 +52,5 @@ class OverlappingRings extends Pattern {
     }
   }
 
-  get size => Size(radius * nx, radius * ny);
+  Size get size => Size(radius * nx, radius * ny);
 }

@@ -64,5 +64,5 @@ class ConcentricCircles extends Pattern {
     }
   }
 
-  get size => Size((radius + strokeWidth) * nx, (radius + strokeWidth) * ny);
+  Size get size => Size((radius + strokeWidth) * nx, (radius + strokeWidth) * ny);
 }

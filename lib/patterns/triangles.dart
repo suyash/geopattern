@@ -72,5 +72,5 @@ class Triangles extends Pattern {
       ..lineTo(offset.dx + -side / 2, offset.dy + 0);
   }
 
-  get size => Size(side * nx / 2, _trih * ny);
+  Size get size => Size(side * nx / 2, _trih * ny);
 }

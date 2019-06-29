@@ -67,5 +67,5 @@ class NestedSquares extends Pattern {
     }
   }
 
-  get size => Size(nx * (2 * side + outerside), ny * (2 * side + outerside));
+  Size get size => Size(nx * (2 * side + outerside), ny * (2 * side + outerside));
 }

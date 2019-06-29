@@ -80,5 +80,5 @@ class Chevrons extends Pattern {
       ..lineTo(offset.dx + side / 2, offset.dy + side - e);
   }
 
-  get size => Size(side * nx, ((side * ny * 2) / 3).ceil() * 1.0);
+  Size get size => Size(side * nx, ((side * ny * 2) / 3).ceil() * 1.0);
 }

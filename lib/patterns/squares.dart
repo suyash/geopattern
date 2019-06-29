@@ -50,5 +50,5 @@ class Squares extends Pattern {
     }
   }
 
-  get size => Size(nx * side, ny * side);
+  Size get size => Size(nx * side, ny * side);
 }

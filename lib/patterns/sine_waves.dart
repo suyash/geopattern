@@ -71,5 +71,5 @@ class SineWaves extends Pattern {
           offset.dy + amplitude);
   }
 
-  get size => Size(period, amplitude);
+  Size get size => Size(period, amplitude);
 }

@@ -97,7 +97,7 @@ class Plaid extends Pattern {
     }
   }
 
-  get size => Size(
+  Size get size => Size(
       horizontalSizes.reduce((a, b) => a + b) +
           horizontalOffsets.reduce((a, b) => a + b),
       verticalSizes.reduce((a, b) => a + b) +

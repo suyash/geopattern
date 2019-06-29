@@ -76,5 +76,5 @@ class Hexagons extends Pattern {
       ..lineTo(offset.dx + 0, offset.dy + _hexHeight / 2);
   }
 
-  get size => Size((_hexWidth + side) * nx / 2, _hexHeight * ny);
+  Size get size => Size((_hexWidth + side) * nx / 2, _hexHeight * ny);
 }

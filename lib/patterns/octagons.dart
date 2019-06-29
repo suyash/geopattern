@@ -66,5 +66,5 @@ class Octagons extends Pattern {
       ..lineTo(offset.dx + side / 3, offset.dy + 0);
   }
 
-  get size => Size(side * nx, side * ny);
+  Size get size => Size(side * nx, side * ny);
 }
