@@ -81,7 +81,7 @@ renders
 
 Each pattern has an associated `size`. The `FillPainter` class implements `CustomPainter` such that the pattern is repetitively painted across the entire width and height of the canvas. However, each `Pattern` has a `paint(Canvas, Offset)` method that can be used to paint on its own.
 
-There is an example for using a pattern as a background
+There is an example for using a pattern as a background for `SliverAppBar` in `examples/appbar.dart`
 
 [Demo](https://i.imgur.com/iPj0sMo.mp4)
 
