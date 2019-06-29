@@ -84,3 +84,8 @@ Each pattern has an associated `size`. The `FillPainter` class implements `Custo
 There is an example for using a pattern as a background
 
 [Demo](https://i.imgur.com/iPj0sMo.mp4)
+
+### TODO
+
+- Tesselation
+- Xes
