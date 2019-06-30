@@ -2,11 +2,13 @@ name: geopattern
 description: A new Flutter package project.
 version: 0.0.1
 author: Suyash <suyash93@protonmail.com>
+homepage: https://github.com/suyash/geopattern
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  meta: ^1.1.6
   flutter:
     sdk: flutter
 
