@@ -5,20 +5,20 @@
 Geometric Patterns for Flutter using `CustomPainter`s.
 
 <div>
-<img src="examples/images/squares.png" height="450" />
-<img src="examples/images/diamonds.png" height="450" />
-<img src="examples/images/hexagons.png" height="450" />
-<img src="examples/images/concentric_circles.png" height="450" />
-<img src="examples/images/overlapping_circles.png" height="450" />
-<img src="examples/images/overlapping_rings.png" height="450" />
-<img src="examples/images/nested_squares.png" height="450" />
-<img src="examples/images/mosaic_squares.png" height="450" />
-<img src="examples/images/chevrons.png" height="450" />
-<img src="examples/images/octagons.png" height="450" />
-<img src="examples/images/plaid.png" height="450" />
-<img src="examples/images/plus_signs.png" height="450" />
-<img src="examples/images/triangles.png" height="450" />
-<img src="examples/images/sine_waves.png" height="450" />
+<img src="example/images/squares.png" height="450" />
+<img src="example/images/diamonds.png" height="450" />
+<img src="example/images/hexagons.png" height="450" />
+<img src="example/images/concentric_circles.png" height="450" />
+<img src="example/images/overlapping_circles.png" height="450" />
+<img src="example/images/overlapping_rings.png" height="450" />
+<img src="example/images/nested_squares.png" height="450" />
+<img src="example/images/mosaic_squares.png" height="450" />
+<img src="example/images/chevrons.png" height="450" />
+<img src="example/images/octagons.png" height="450" />
+<img src="example/images/plaid.png" height="450" />
+<img src="example/images/plus_signs.png" height="450" />
+<img src="example/images/triangles.png" height="450" />
+<img src="example/images/sine_waves.png" height="450" />
 </div>
 
 ## Simple Example
@@ -49,7 +49,7 @@ class App extends StatelessWidget {
 
 creates
 
-<img src="examples/images/simple.png" height="480">
+<img src="example/images/simple.png" height="480">
 
 Patterns are fully customizable, for example a pattern created as
 
@@ -77,11 +77,11 @@ final pattern = ConcentricCircles(
 
 renders
 
-<img src="examples/images/overlapping_circles.png" height="480">
+<img src="example/images/overlapping_circles.png" height="480">
 
 Each pattern has an associated `size`. The `FillPainter` class implements `CustomPainter` such that the pattern is repetitively painted across the entire width and height of the canvas. However, each `Pattern` has a `paint(Canvas, Offset)` method that can be used to paint on its own.
 
-There is an example for using a pattern as a background for `SliverAppBar` in `examples/appbar.dart`
+There is an example for using a pattern as a background for `SliverAppBar` in `example/appbar.dart`
 
 [Demo](https://i.imgur.com/iPj0sMo.mp4)
 
