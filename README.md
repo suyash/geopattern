@@ -1,5 +1,7 @@
 # geopattern_flutter
 
+[![pub package](https://img.shields.io/pub/v/geopattern_flutter.svg)](https://pub.dartlang.org/packages/geopattern_flutter)
+
 > Flutter Port of [jasonlong/geo_pattern](https://github.com/jasonlong/geo_pattern)
 
 Geometric Patterns for Flutter using `CustomPainter`s.
