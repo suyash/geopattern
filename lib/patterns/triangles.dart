@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 
 import 'pattern.dart';
 
-/// https://github.com/suyash/geopattern/blob/master/examples/images/triangles.png
+/// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/triangles.png
 class Triangles extends Pattern {
   final double side;
   final int nx;

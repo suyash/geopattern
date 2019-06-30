@@ -3,20 +3,20 @@ import 'dart:ui';
 
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:geopattern/patterns/chevrons.dart';
-import 'package:geopattern/patterns/concentric_circles.dart';
-import 'package:geopattern/patterns/diamonds.dart';
-import 'package:geopattern/patterns/hexagons.dart';
-import 'package:geopattern/patterns/mosaic_squares.dart';
-import 'package:geopattern/patterns/nested_squares.dart';
-import 'package:geopattern/patterns/octagons.dart';
-import 'package:geopattern/patterns/overlapping_circles.dart';
-import 'package:geopattern/patterns/overlapping_rings.dart';
-import 'package:geopattern/patterns/plaid.dart';
-import 'package:geopattern/patterns/plus_signs.dart';
-import 'package:geopattern/patterns/sine_waves.dart';
-import 'package:geopattern/patterns/squares.dart';
-import 'package:geopattern/patterns/triangles.dart';
+import 'package:geopattern_flutter/patterns/chevrons.dart';
+import 'package:geopattern_flutter/patterns/concentric_circles.dart';
+import 'package:geopattern_flutter/patterns/diamonds.dart';
+import 'package:geopattern_flutter/patterns/hexagons.dart';
+import 'package:geopattern_flutter/patterns/mosaic_squares.dart';
+import 'package:geopattern_flutter/patterns/nested_squares.dart';
+import 'package:geopattern_flutter/patterns/octagons.dart';
+import 'package:geopattern_flutter/patterns/overlapping_circles.dart';
+import 'package:geopattern_flutter/patterns/overlapping_rings.dart';
+import 'package:geopattern_flutter/patterns/plaid.dart';
+import 'package:geopattern_flutter/patterns/plus_signs.dart';
+import 'package:geopattern_flutter/patterns/sine_waves.dart';
+import 'package:geopattern_flutter/patterns/squares.dart';
+import 'package:geopattern_flutter/patterns/triangles.dart';
 
 void main() {
   test('chevrons', () {

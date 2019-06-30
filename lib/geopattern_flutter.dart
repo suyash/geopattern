@@ -1,4 +1,4 @@
-library geopattern;
+library geopattern_flutter;
 
 import 'package:flutter/widgets.dart';
 

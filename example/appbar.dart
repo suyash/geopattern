@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:geopattern/geopattern.dart';
-import 'package:geopattern/patterns/overlapping_circles.dart';
+import 'package:geopattern_flutter/geopattern_flutter.dart';
+import 'package:geopattern_flutter/patterns/overlapping_circles.dart';
 
 void main() => runApp(App());
 

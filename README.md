@@ -1,4 +1,4 @@
-# geopattern
+# geopattern_flutter
 
 > Flutter Port of [jasonlong/geo_pattern](https://github.com/jasonlong/geo_pattern)
 
@@ -28,8 +28,8 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
-import 'package:geopattern/geopattern.dart';
-import 'package:geopattern/patterns/mosaic_squares.dart';
+import 'package:geopattern_flutter/geopattern_flutter.dart';
+import 'package:geopattern_flutter/patterns/mosaic_squares.dart';
 
 void main() => runApp(App());
 

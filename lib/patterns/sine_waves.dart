@@ -8,7 +8,7 @@ import 'pattern.dart';
 /// The approximation is different from the original library, this
 /// draws only a single period using 2 cubic paths.
 ///
-/// https://github.com/suyash/geopattern/blob/master/examples/images/sine_waves.png
+/// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/sine_waves.png
 class SineWaves extends Pattern {
   final double amplitude;
   final double period;

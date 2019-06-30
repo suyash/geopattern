@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 
 import 'pattern.dart';
 
-/// https://github.com/suyash/geopattern/blob/master/examples/images/chevrons.png
+/// https://github.com/suyash/geopattern_flutter/blob/master/examples/images/chevrons.png
 class Chevrons extends Pattern {
   final double side;
   final int nx;
