@@ -5,20 +5,20 @@
 Geometric Patterns for Flutter using `CustomPainter`s.
 
 <div>
-<img src="example/images/squares.png" height="450" />
-<img src="example/images/diamonds.png" height="450" />
-<img src="example/images/hexagons.png" height="450" />
-<img src="example/images/concentric_circles.png" height="450" />
-<img src="example/images/overlapping_circles.png" height="450" />
-<img src="example/images/overlapping_rings.png" height="450" />
-<img src="example/images/nested_squares.png" height="450" />
-<img src="example/images/mosaic_squares.png" height="450" />
-<img src="example/images/chevrons.png" height="450" />
-<img src="example/images/octagons.png" height="450" />
-<img src="example/images/plaid.png" height="450" />
-<img src="example/images/plus_signs.png" height="450" />
-<img src="example/images/triangles.png" height="450" />
-<img src="example/images/sine_waves.png" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/squares.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/diamonds.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/hexagons.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/concentric_circles.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/overlapping_circles.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/overlapping_rings.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/nested_squares.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/mosaic_squares.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/chevrons.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/octagons.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/plaid.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/plus_signs.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/triangles.png?raw=true" height="450" />
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/sine_waves.png?raw=true" height="450" />
 </div>
 
 ## Simple Example
@@ -49,7 +49,7 @@ class App extends StatelessWidget {
 
 creates
 
-<img src="example/images/simple.png" height="480">
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/simple.png?raw=true" height="480">
 
 Patterns are fully customizable, for example a pattern created as
 
@@ -77,7 +77,7 @@ final pattern = ConcentricCircles(
 
 renders
 
-<img src="example/images/overlapping_circles.png" height="480">
+<img src="https://github.com/suyash/geopattern/blob/master/example/images/overlapping_circles.png?raw=true" height="480">
 
 Each pattern has an associated `size`. The `FillPainter` class implements `CustomPainter` such that the pattern is repetitively painted across the entire width and height of the canvas. However, each `Pattern` has a `paint(Canvas, Offset)` method that can be used to paint on its own.
 
