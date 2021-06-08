@@ -15,11 +15,11 @@ class Squares extends Pattern {
   final Color strokeColor;
 
   Squares(
-      {@required this.side,
-      @required this.nx,
-      @required this.ny,
-      @required this.fillColors,
-      @required this.strokeColor})
+      {required this.side,
+      required this.nx,
+      required this.ny,
+      required this.fillColors,
+      required this.strokeColor})
       : assert(fillColors.length == nx * ny);
 
   Squares.fromHash(String hash)

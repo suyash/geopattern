@@ -18,11 +18,11 @@ class Hexagons extends Pattern {
   final double _hexHeight;
 
   Hexagons(
-      {@required this.side,
-      @required this.nx,
-      @required this.ny,
-      @required this.fillColors,
-      @required this.strokeColor})
+      {required this.side,
+      required this.nx,
+      required this.ny,
+      required this.fillColors,
+      required this.strokeColor})
       : assert(fillColors.length == nx * ny),
         _hexWidth = side * 2,
         _hexHeight = side * sqrt(3);

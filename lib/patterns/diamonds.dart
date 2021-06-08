@@ -16,12 +16,12 @@ class Diamonds extends Pattern {
   final Color strokeColor;
 
   Diamonds(
-      {@required this.w,
-      @required this.h,
-      @required this.nx,
-      @required this.ny,
-      @required this.fillColors,
-      @required this.strokeColor})
+      {required this.w,
+      required this.h,
+      required this.nx,
+      required this.ny,
+      required this.fillColors,
+      required this.strokeColor})
       : assert(fillColors.length == nx * ny);
 
   Diamonds.fromHash(String hash)

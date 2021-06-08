@@ -16,12 +16,12 @@ class Plaid extends Pattern {
   final int _ny;
 
   Plaid(
-      {@required this.horizontalOffsets,
-      @required this.verticalOffsets,
-      @required this.horizontalSizes,
-      @required this.verticalSizes,
-      @required this.horizontalFillColors,
-      @required this.verticalFillColors})
+      {required this.horizontalOffsets,
+      required this.verticalOffsets,
+      required this.horizontalSizes,
+      required this.verticalSizes,
+      required this.horizontalFillColors,
+      required this.verticalFillColors})
       : _nx = horizontalSizes.length,
         _ny = verticalSizes.length,
         assert(horizontalFillColors.length == horizontalSizes.length),

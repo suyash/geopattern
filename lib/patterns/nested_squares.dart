@@ -15,11 +15,11 @@ class NestedSquares extends Pattern {
   final List<Color> strokeColors;
 
   NestedSquares(
-      {@required this.side,
-      @required this.outerside,
-      @required this.nx,
-      @required this.ny,
-      @required this.strokeColors})
+      {required this.side,
+      required this.outerside,
+      required this.nx,
+      required this.ny,
+      required this.strokeColors})
       : assert(strokeColors.length == nx * ny),
         assert(outerside > side);
 

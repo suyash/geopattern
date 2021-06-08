@@ -13,11 +13,11 @@ class OverlappingRings extends Pattern {
   final List<Color> strokeColors;
 
   OverlappingRings(
-      {@required this.radius,
-      @required this.strokeWidth,
-      @required this.nx,
-      @required this.ny,
-      @required this.strokeColors})
+      {required this.radius,
+      required this.strokeWidth,
+      required this.nx,
+      required this.ny,
+      required this.strokeColors})
       : assert(strokeColors.length == nx * ny);
 
   OverlappingRings.fromHash(String hash)

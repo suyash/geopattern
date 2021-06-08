@@ -15,11 +15,11 @@ class Octagons extends Pattern {
   final Color strokeColor;
 
   Octagons(
-      {@required this.side,
-      @required this.nx,
-      @required this.ny,
-      @required this.fillColors,
-      @required this.strokeColor})
+      {required this.side,
+      required this.nx,
+      required this.ny,
+      required this.fillColors,
+      required this.strokeColor})
       : assert(fillColors.length == nx * ny);
 
   Octagons.fromHash(String hash)
