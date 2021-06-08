@@ -18,11 +18,11 @@ class SineWaves extends Pattern {
   final double _xoff;
 
   SineWaves(
-      {@required this.period,
-      @required this.amplitude,
-      @required this.strokeOffsets,
-      @required this.strokeWidth,
-      @required this.strokeColors})
+      {required this.period,
+      required this.amplitude,
+      required this.strokeOffsets,
+      required this.strokeWidth,
+      required this.strokeColors})
       : _xoff = (period / 4) * .7,
         assert(strokeOffsets.length == strokeColors.length);
 

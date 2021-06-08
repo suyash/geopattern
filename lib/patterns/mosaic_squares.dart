@@ -13,11 +13,11 @@ class MosaicSquares extends Pattern {
   final Color strokeColor;
 
   MosaicSquares(
-      {@required this.side,
-      @required this.nx,
-      @required this.ny,
-      @required this.fillColors,
-      @required this.strokeColor})
+      {required this.side,
+      required this.nx,
+      required this.ny,
+      required this.fillColors,
+      required this.strokeColor})
       : assert(fillColors.length == 2 * nx * ny);
 
   MosaicSquares.fromHash(String hash)

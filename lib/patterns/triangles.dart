@@ -16,11 +16,11 @@ class Triangles extends Pattern {
   final double _trih;
 
   Triangles(
-      {@required this.side,
-      @required this.nx,
-      @required this.ny,
-      @required this.fillColors,
-      @required this.strokeColor})
+      {required this.side,
+      required this.nx,
+      required this.ny,
+      required this.fillColors,
+      required this.strokeColor})
       : assert(fillColors.length == nx * ny),
         _trih = sqrt(3) * side / 2;
 

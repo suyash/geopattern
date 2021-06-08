@@ -16,12 +16,12 @@ class ConcentricCircles extends Pattern {
   final List<Color> fillColors;
 
   ConcentricCircles(
-      {@required this.radius,
-      @required this.strokeWidth,
-      @required this.nx,
-      @required this.ny,
-      @required this.strokeColors,
-      @required this.fillColors})
+      {required this.radius,
+      required this.strokeWidth,
+      required this.nx,
+      required this.ny,
+      required this.strokeColors,
+      required this.fillColors})
       : assert(strokeColors.length == nx * ny),
         assert(fillColors.length == nx * ny);
 

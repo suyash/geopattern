@@ -15,11 +15,11 @@ class PlusSigns extends Pattern {
   final double _midh;
 
   PlusSigns(
-      {@required this.side,
-      @required this.nx,
-      @required this.ny,
-      @required this.fillColors,
-      @required this.strokeColor})
+      {required this.side,
+      required this.nx,
+      required this.ny,
+      required this.fillColors,
+      required this.strokeColor})
       : assert(fillColors.length == nx * ny),
         _midl = side / 3,
         _midh = 2 * side / 3;

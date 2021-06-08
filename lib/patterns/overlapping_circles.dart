@@ -11,12 +11,12 @@ class OverlappingCircles extends Pattern {
   final int ny;
   final List<Color> fillColors;
 
-  OverlappingCircles(
-      {@required this.radius,
-      @required this.nx,
-      @required this.ny,
-      @required this.fillColors})
-      : assert(fillColors.length == nx * ny);
+  OverlappingCircles({
+    required this.radius,
+    required this.nx,
+    required this.ny,
+    required this.fillColors,
+  }) : assert(fillColors.length == nx * ny);
 
   OverlappingCircles.fromHash(String hash)
       : assert(hash.length == 40),
